@@ -23,22 +23,22 @@ input.addEventListener("keypress", function(e) {
     }
 });
 
-// function addItem(e) {
-//     if(e.key == "ArrowUp" || e.key == "ArrowDown") {
-//         let task = input.value;
-//         if(!task) {
-//             alert("Error- Adding empty task");
-//             return;
-//         }
-//         input.value = "";
-//         let li = document.createElement("li");
-//         li.innerText = task;
-//         li.addEventListener("dblclick", deleteTask);
-//         if(e.key == "ArrowUp") {
-//             ul.insertBefore(li, ul.firstChild);
-//         } else {
-//             ul.appendChild(li);
-//         }
-//     }
-// }
-// input.addEventListener("keyup", addItem);
+function addItem(e) {
+    if(e.key == "ArrowUp" || e.key == "ArrowDown") {
+        let task = input.value;
+        if(!task) {
+            alert("Error- Adding empty task");
+            return;
+        }
+        input.value = "";
+        let li = document.createElement("li");
+        li.innerText = task;
+        li.addEventListener("dblclick", deleteTask);
+        if(e.key == "ArrowUp") {
+            ul.insertBefore(li, ul.firstChild);
+        } else {
+            ul.appendChild(li);
+        }
+    }
+}
+input.addEventListener("keyup", addItem);
